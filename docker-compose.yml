@@ -14,6 +14,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
   php:
     build: ./php7-fpm
+    container_name: armateam
     ports:
       - 9000:9000
     links:
@@ -22,8 +23,6 @@ services:
       - ${SYMFONY_APP_PATH}:/var/www/symfony
       - ./logs/symfony:/var/www/symfony/var/logs
       - ./php7-fpm/php-timezone.ini:/usr/local/etc/php/conf.d/docker-php-timezone.ini
-    tty: true
-    stdin_open: true
   web:
     build: ./nginx
     ports:
@@ -44,3 +43,9 @@ services:
     volumes_from:
         - php
         - web
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8282:80
+    links:
+      - db
