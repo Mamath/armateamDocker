@@ -22,6 +22,8 @@ services:
       - ${SYMFONY_APP_PATH}:/var/www/symfony
       - ./logs/symfony:/var/www/symfony/var/logs
       - ./php7-fpm/php-timezone.ini:/usr/local/etc/php/conf.d/docker-php-timezone.ini
+    tty: true
+    stdin_open: true
   web:
     build: ./nginx
     ports:
