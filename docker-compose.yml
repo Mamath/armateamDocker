@@ -3,6 +3,7 @@ version: '2'
 services:
   db:
     image: mysql
+    container_name: mysqldb
     command: mysqld --user=root --verbose --skip-sync-frm --innodb_flush_log_at_trx_commit=0 --innodb-support-xa=0 --bind-address=0.0.0.0 --query-cache-type=1
     ports:
       - "3306:3306"
@@ -15,26 +16,30 @@ services:
     tty: true
   armateam:
     build: ./armateam
+    container_name: armateam
     ports:
-      - 8080:80
+      - "8080:80"
+      - "2333:22" # ssh
+      - "8787:8484"
+    expose:
+      - "9000"
     links:
       - db:mysqldb
     volumes:
-      - ${SYMFONY_APP_PATH}:/var/www/symfony
+      - ./armateam/src:/home/src
       - ./logs/nginx/:/var/log/nginx
-      - ./logs/symfony:/var/www/symfony/var/logs
-      - ./php7-fpm/php-timezone.ini:/usr/local/etc/php/conf.d/docker-php-timezone.ini
+      - ./logs/symfony:/home/src/tournament/var/logs
     tty: true
   elk:
     image: willdurand/elk
+    container_name: elk
     ports:
         - 8181:80
     volumes:
         - ./elk/logstash:/etc/logstash
         - ./elk/logstash/patterns:/opt/logstash/patterns
     volumes_from:
-        - php
-        - web
+        - armateam
     tty: true
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
