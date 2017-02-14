@@ -12,27 +12,19 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-  php:
-    build: ./php7-fpm
-    container_name: armateam
+    tty: true
+  armateam:
+    build: ./armateam
     ports:
-      - 9000:9000
+      - 8080:80
     links:
       - db:mysqldb
     volumes:
       - ${SYMFONY_APP_PATH}:/var/www/symfony
+      - ./logs/nginx/:/var/log/nginx
       - ./logs/symfony:/var/www/symfony/var/logs
       - ./php7-fpm/php-timezone.ini:/usr/local/etc/php/conf.d/docker-php-timezone.ini
-  web:
-    build: ./nginx
-    ports:
-      - 8080:80
-    links:
-      - php
-    volumes_from:
-      - php
-    volumes:
-      - ./logs/nginx/:/var/log/nginx
+    tty: true
   elk:
     image: willdurand/elk
     ports:
@@ -43,9 +35,11 @@ services:
     volumes_from:
         - php
         - web
+    tty: true
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
       - 8282:80
     links:
       - db
+    tty: true

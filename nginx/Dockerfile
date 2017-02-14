@@ -1,7 +1,6 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get install -y nginx && apt-get clean
-
+RUN apt-get update && apt-get install -y nginx
 ADD nginx.conf /etc/nginx
 ADD symfony.conf /etc/nginx/sites-available/
 ADD upstream.conf /etc/nginx/conf.d/
