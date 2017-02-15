@@ -17,6 +17,7 @@ services:
   armateam:
     build: ./armateam
     container_name: armateam
+    hostname: armateam
     ports:
       - "8080:80"
       - "2333:22" # ssh
