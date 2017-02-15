@@ -5,3 +5,71 @@
 2017/02/13 10:30:55 [error] 7#7: *3 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://172.19.0.3:9000", host: "armateam.dev:8080"
 2017/02/13 10:31:15 [error] 7#7: *8 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://172.19.0.3:9000", host: "armateam.dev:8080"
 2017/02/13 10:31:49 [error] 7#7: *10 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://172.19.0.3:9000", host: "armateam.dev:8080"
+2017/02/15 08:37:51 [emerg] 62#62: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 08:56:33 [emerg] 9#9: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 08:56:34 [emerg] 11#11: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 08:56:37 [emerg] 13#13: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 08:56:40 [emerg] 15#15: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 08:58:41 [emerg] 9#9: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 08:58:42 [emerg] 11#11: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 08:58:44 [emerg] 13#13: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 08:58:47 [emerg] 15#15: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 08:59:13 [emerg] 40#40: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 08:59:14 [emerg] 41#41: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 08:59:16 [emerg] 42#42: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 08:59:19 [emerg] 44#44: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 09:01:54 [emerg] 88#88: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 09:01:55 [emerg] 89#89: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 09:01:57 [emerg] 91#91: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 09:02:00 [emerg] 94#94: host not found in upstream "php:9000" in /etc/nginx/conf.d/upstream.conf:1
+2017/02/15 09:02:43 [emerg] 103#103: no port in upstream "php-upstream" in /etc/nginx/sites-available/symfony.conf:14
+2017/02/15 09:02:44 [emerg] 104#104: no port in upstream "php-upstream" in /etc/nginx/sites-available/symfony.conf:14
+2017/02/15 09:02:46 [emerg] 106#106: no port in upstream "php-upstream" in /etc/nginx/sites-available/symfony.conf:14
+2017/02/15 09:02:49 [emerg] 109#109: no port in upstream "php-upstream" in /etc/nginx/sites-available/symfony.conf:14
+2017/02/15 09:17:13 [error] 141#141: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "armateam.dev:8080"
+2017/02/15 09:17:13 [error] 141#141: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://[::1]:9000", host: "armateam.dev:8080"
+2017/02/15 09:24:37 [error] 141#141: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://[::1]:9000", host: "armateam.dev:8080"
+2017/02/15 09:24:37 [error] 141#141: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "armateam.dev:8080"
+2017/02/15 09:24:38 [error] 141#141: *4 no live upstreams while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://php-upstream", host: "armateam.dev:8080"
+2017/02/15 09:25:00 [error] 141#141: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://[::1]:9000", host: "armateam.dev:8080"
+2017/02/15 09:25:00 [error] 141#141: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "armateam.dev:8080"
+2017/02/15 09:25:03 [error] 141#141: *7 no live upstreams while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://php-upstream", host: "armateam.dev:8080"
+2017/02/15 09:25:03 [error] 141#141: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://[::1]:9000", host: "armateam.dev:8080"
+2017/02/15 09:25:03 [error] 141#141: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "armateam.dev:8080"
+2017/02/15 09:25:04 [error] 141#141: *7 no live upstreams while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://php-upstream", host: "armateam.dev:8080"
+2017/02/15 09:25:04 [error] 141#141: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://[::1]:9000", host: "armateam.dev:8080"
+2017/02/15 09:25:04 [error] 141#141: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "armateam.dev:8080"
+2017/02/15 09:25:04 [error] 141#141: *7 no live upstreams while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://php-upstream", host: "armateam.dev:8080"
+2017/02/15 09:25:04 [error] 141#141: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://[::1]:9000", host: "armateam.dev:8080"
+2017/02/15 09:25:04 [error] 141#141: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "armateam.dev:8080"
+2017/02/15 09:25:09 [error] 141#141: *7 no live upstreams while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://php-upstream", host: "armateam.dev:8080"
+2017/02/15 09:26:53 [error] 141#141: *16 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://[::1]:9000", host: "armateam.dev:8080"
+2017/02/15 09:26:53 [error] 141#141: *16 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "armateam.dev:8080"
+2017/02/15 09:28:19 [error] 11#11: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "armateam.dev:8080"
+2017/02/15 09:28:19 [error] 11#11: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://[::1]:9000", host: "armateam.dev:8080"
+2017/02/15 09:28:19 [error] 11#11: *1 no live upstreams while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://php-upstream", host: "armateam.dev:8080"
+2017/02/15 09:28:20 [error] 11#11: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://[::1]:9000", host: "armateam.dev:8080"
+2017/02/15 09:28:20 [error] 11#11: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "armateam.dev:8080"
+2017/02/15 09:28:20 [error] 11#11: *1 no live upstreams while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://php-upstream", host: "armateam.dev:8080"
+2017/02/15 09:32:25 [crit] 11#11: *1 connect() to unix:/var/run/php7-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock:", host: "armateam.dev:8080"
+2017/02/15 09:32:26 [crit] 11#11: *1 connect() to unix:/var/run/php7-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock:", host: "armateam.dev:8080"
+2017/02/15 09:32:26 [crit] 11#11: *1 connect() to unix:/var/run/php7-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock:", host: "armateam.dev:8080"
+2017/02/15 09:32:26 [crit] 11#11: *1 connect() to unix:/var/run/php7-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock:", host: "armateam.dev:8080"
+2017/02/15 09:32:50 [crit] 11#11: *6 connect() to unix:/var/run/php7-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock:", host: "armateam.dev:8080"
+2017/02/15 09:32:50 [crit] 11#11: *6 connect() to unix:/var/run/php7-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock:", host: "armateam.dev:8080"
+2017/02/15 09:32:50 [crit] 11#11: *6 connect() to unix:/var/run/php7-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock:", host: "armateam.dev:8080"
+2017/02/15 09:37:38 [crit] 10#10: *1 connect() to unix:/run/php7.0-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://unix:/run/php7.0-fpm.sock:", host: "armateam.dev:8080"
+2017/02/15 09:39:29 [error] 11#11: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  require(/home/src/tournament/app/../vendor/autoload.php): failed to open stream: No such file or directory in /home/src/tournament/app/autoload.php on line 7
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/src/tournament/web/app_dev.php:0
+PHP message: PHP   2. require() /home/src/tournament/web/app_dev.php:22
+PHP message: PHP Fatal error:  require(): Failed opening required '/home/src/tournament/app/../vendor/autoload.php' (include_path='.:/usr/share/php') in /home/src/tournament/app/autoload.php on line 7
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/src/tournament/web/app_dev.php:0
+PHP message: PHP   2. require() /home/src/tournament/web/app_dev.php:22" while reading response header from upstream, client: 172.19.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "armateam.dev:8080"
+2017/02/15 09:43:12 [error] 11#11: *9 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'DOMDocument' not found in /home/src/tournament/vendor/symfony/symfony/src/Symfony/Component/Config/Util/XmlUtils.php:52
+Stack trace:
+#0 /home/src/tournament/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/XmlFileLoader.php(263): Symfony\Component\Config\Util\XmlUtils::loadFile('/home/src/tourn...', Array)
+#1 /home/src/tournament/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/XmlFileLoader.php(41): Symfony\Component\DependencyInjection\Loader\XmlFileLoader->parseFileToDOM('/home/src/tourn...')
+#2 /home/src/tournament/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/FrameworkExtension.php(72): Symfony\Component\DependencyInjection\Loader\XmlFileLoader->load('web.xml')
+#3 /home/src/tournament/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Compiler/MergeExtensionConfigurationPass.php(55): Symfony\Bundle\FrameworkBundle\DependencyInjection\FrameworkExtension->loa" while reading response header from upstream, client: 172.19.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "armateam.dev:8080"
