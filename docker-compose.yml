@@ -4,9 +4,9 @@ services:
   db:
     image: mysql
     container_name: mysqldb
-    command: mysqld --user=root --verbose --skip-sync-frm --innodb_flush_log_at_trx_commit=0 --innodb-support-xa=0 --bind-address=0.0.0.0 --query-cache-type=1
+    command: mysqld --user=root --verbose
     ports:
-      - "3306:3306"
+      - 3306:3306
     volumes:
       - "./.data/db:/var/lib/mysql"
     environment:
@@ -19,7 +19,7 @@ services:
     container_name: armateam
     hostname: armateam
     ports:
-      - "8080:80"
+      - "80:80"
       - "2333:22" # ssh
       - "8787:8484"
     expose:
@@ -30,6 +30,7 @@ services:
       - ./armateam/src:/home/src
       - ./logs/nginx/:/var/log/nginx
       - ./logs/symfony:/home/src/tournament/var/logs
+      - ./logs/symfony:/home/src/bookshop-api/var/logs
     tty: true
   elk:
     image: willdurand/elk
@@ -44,6 +45,7 @@ services:
     tty: true
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
     ports:
       - 8282:80
     links:
