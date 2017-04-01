@@ -1,6 +1,6 @@
 .idea/
 /logs/
-/armateam/src/tournament/
+/armateam/src/
 /logs/nginx/error.log
 /logs/symfony/dev.log
 /logs/symfony/
