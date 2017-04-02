@@ -88,3 +88,34 @@ Stack trace:
 2017/04/01 16:38:08 [crit] 11#11: *1 connect() to unix:/run/php/php7.0-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.18.0.1, server: armateam.dev, request: "GET /app_dev.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "armateam.dev"
 2017/04/01 17:01:17 [crit] 12#12: *2 connect() to unix:/run/php/php7.0-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.18.0.1, server: armateam.dev, request: "GET /app_dev.php HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "armateam.dev"
 2017/04/01 17:14:32 [crit] 11#11: *1 connect() to unix:/run/php/php7.0-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.18.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.0-fpm.sock:", host: "armateam.dev"
+2017/04/01 21:22:34 [error] 12#12: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  require(/home/src/bookshop-api/app/../vendor/autoload.php): failed to open stream: No such file or directory in /home/src/bookshop-api/app/autoload.php on line 7
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/src/bookshop-api/web/app_dev.php:0
+PHP message: PHP   2. require() /home/src/bookshop-api/web/app_dev.php:26
+PHP message: PHP Fatal error:  require(): Failed opening required '/home/src/bookshop-api/app/../vendor/autoload.php' (include_path='.:/usr/share/php') in /home/src/bookshop-api/app/autoload.php on line 7
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/src/bookshop-api/web/app_dev.php:0
+PHP message: PHP   2. require() /home/src/bookshop-api/web/app_dev.php:26" while reading response header from upstream, client: 172.18.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.1-fpm.sock:", host: "armateam.dev"
+2017/04/01 21:22:38 [error] 12#12: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  require(/home/src/bookshop-api/app/../vendor/autoload.php): failed to open stream: No such file or directory in /home/src/bookshop-api/app/autoload.php on line 7
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/src/bookshop-api/web/app_dev.php:0
+PHP message: PHP   2. require() /home/src/bookshop-api/web/app_dev.php:26
+PHP message: PHP Fatal error:  require(): Failed opening required '/home/src/bookshop-api/app/../vendor/autoload.php' (include_path='.:/usr/share/php') in /home/src/bookshop-api/app/autoload.php on line 7
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/src/bookshop-api/web/app_dev.php:0
+PHP message: PHP   2. require() /home/src/bookshop-api/web/app_dev.php:26" while reading response header from upstream, client: 172.18.0.1, server: armateam.dev, request: "GET /app_dev.php/ HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.1-fpm.sock:", host: "armateam.dev"
+2017/04/02 11:36:55 [error] 11#11: *5 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to undefined function Doctrine\Common\Cache\apcu_fetch() in /home/src/api/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ApcuCache.php:36
+Stack trace:
+#0 /home/src/api/vendor/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php(212): Doctrine\Common\Cache\ApcuCache->doFetch('DoctrineNamespa...')
+#1 /home/src/api/vendor/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php(185): Doctrine\Common\Cache\CacheProvider->getNamespaceVersion()
+#2 /home/src/api/vendor/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php(78): Doctrine\Common\Cache\CacheProvider->getNamespacedId('AppBundle\\Entit...')
+#3 /home/src/api/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(211): Doctrine\Common\Cache\CacheProvider->fetch('AppBundle\\Entit...')
+#4 /home/src/api/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(115): Doctrine\Common\Persistence\Mapping\AbstractClas" while reading response header from upstream, client: 172.18.0.1, server: armateam.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.1-fpm.sock:", host: "armateam.dev"
+2017/04/02 17:09:58 [emerg] 105#105: host not found in upstream "php" in /etc/nginx/sites-available/symfony.conf:10
+2017/04/02 17:09:59 [emerg] 106#106: host not found in upstream "php" in /etc/nginx/sites-available/symfony.conf:10
+2017/04/02 17:10:01 [emerg] 107#107: host not found in upstream "php" in /etc/nginx/sites-available/symfony.conf:10
+2017/04/02 17:10:04 [emerg] 108#108: host not found in upstream "php" in /etc/nginx/sites-available/symfony.conf:10
+2017/04/02 17:12:13 [emerg] 111#111: host not found in upstream "php" in /etc/nginx/sites-available/symfony.conf:10
+2017/04/02 17:12:14 [emerg] 112#112: host not found in upstream "php" in /etc/nginx/sites-available/symfony.conf:10
+2017/04/02 17:12:16 [emerg] 113#113: host not found in upstream "php" in /etc/nginx/sites-available/symfony.conf:10
+2017/04/02 17:12:19 [emerg] 114#114: host not found in upstream "php" in /etc/nginx/sites-available/symfony.conf:10
