@@ -3,6 +3,7 @@ MAINTAINER Aurélien ASSEMAT <aurelien.assemat@gmail.com>
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
+ENV DEBIAN_FRONTEND=noninteractive
 #add Repositories
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 46C2130DFD2497F5 \
     && echo "deb http://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
@@ -14,7 +15,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C \
 RUN apt-get install -y php7.1 php7.1-xdebug php7.1-mysql php7.1-pdo-mysql php7.1-intl php7.1-cli php7.1-dev php7.1-tidy php7.1-curl \
     php7.1-gd php7.1-fpm php7.1-zip php7.1-mbstring php7.1-sqlite php7.1-xml \
 	nodejs ruby gearman-job-server libgearman-dev libicu-dev libhiredis-dev git \
-	supervisor nginx acl ruby-dev fabric vim yarn
+	supervisor nginx acl ruby-dev fabric vim nodejs npm yarn
 RUN phpenmod pdo_mysql
 
 RUN mkdir -p /home/src
@@ -38,6 +39,7 @@ RUN curl -sS https://getcomposer.org/installer | php \
 	&& chmod a+x /usr/local/bin/symfony
 
 RUN ln -fs /home/src/api /home/api
+RUN ln -fs /home/src/admin /home/admin
 
 COPY config/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 

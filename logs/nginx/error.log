@@ -119,3 +119,14 @@ Stack trace:
 2017/04/02 17:12:14 [emerg] 112#112: host not found in upstream "php" in /etc/nginx/sites-available/symfony.conf:10
 2017/04/02 17:12:16 [emerg] 113#113: host not found in upstream "php" in /etc/nginx/sites-available/symfony.conf:10
 2017/04/02 17:12:19 [emerg] 114#114: host not found in upstream "php" in /etc/nginx/sites-available/symfony.conf:10
+2017/04/03 09:49:24 [emerg] 298#298: no port in upstream "php-upstream" in /etc/nginx/sites-available/symfony.conf:15
+2017/04/03 09:49:25 [emerg] 299#299: no port in upstream "php-upstream" in /etc/nginx/sites-available/symfony.conf:15
+2017/04/03 09:49:27 [emerg] 300#300: no port in upstream "php-upstream" in /etc/nginx/sites-available/symfony.conf:15
+2017/04/03 09:49:30 [emerg] 301#301: no port in upstream "php-upstream" in /etc/nginx/sites-available/symfony.conf:15
+2017/04/03 10:02:11 [error] 320#320: *16 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to undefined function Doctrine\Common\Cache\apcu_fetch() in /home/src/api/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ApcuCache.php:36
+Stack trace:
+#0 /home/src/api/vendor/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php(212): Doctrine\Common\Cache\ApcuCache->doFetch('DoctrineNamespa...')
+#1 /home/src/api/vendor/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php(185): Doctrine\Common\Cache\CacheProvider->getNamespaceVersion()
+#2 /home/src/api/vendor/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php(78): Doctrine\Common\Cache\CacheProvider->getNamespacedId('AppBundle\\Entit...')
+#3 /home/src/api/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(211): Doctrine\Common\Cache\CacheProvider->fetch('AppBundle\\Entit...')
+#4 /home/src/api/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(115): Doctrine\Common\Persistence\Mapping\AbstractClas" while reading response header from upstream, client: 172.19.0.1, server: armateam.dev, request: "OPTIONS / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.1-fpm.sock:", host: "armateam.dev:8080", referrer: "http://localhost:3000/"

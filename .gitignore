@@ -1,7 +1,4 @@
 .idea/
 /logs/
 /armateam/src/
-/logs/nginx/error.log
-/logs/symfony/dev.log
-/logs/symfony/
-/logs/nginx/access.log
+/.data/
