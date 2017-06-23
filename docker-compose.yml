@@ -26,6 +26,7 @@ services:
       - "9000"
     links:
       - db:mysqldb
+      - gearman
     volumes:
       - ./armateam/src:/home/src
       - ./logs/nginx/:/var/log/nginx
@@ -51,3 +52,15 @@ services:
     links:
       - db
     tty: true
+  gearman:
+    build: ./gearman
+    container_name: gearman
+    ports:
+      - 4730:4730
+    links:
+      - db:mysqldb
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_HOST: mysqldb
+      MYSQL_DB: gearman
