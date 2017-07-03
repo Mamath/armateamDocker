@@ -26,12 +26,12 @@ services:
       - "9000"
     links:
       - db:mysqldb
-      - gearman
     volumes:
       - ./armateam/src:/home/src
       - ./logs/nginx/:/var/log/nginx
       - ./logs/symfony:/home/src/tournament/var/logs
       - ./logs/symfony:/home/src/bookshop-api/var/logs
+      - ~/.ssh:/home/.ssh
     tty: true
   elk:
     image: willdurand/elk
@@ -52,15 +52,3 @@ services:
     links:
       - db
     tty: true
-  gearman:
-    build: ./gearman
-    container_name: gearman
-    ports:
-      - 4730:4730
-    links:
-      - db:mysqldb
-    environment:
-      MYSQL_USER: root
-      MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_HOST: mysqldb
-      MYSQL_DB: gearman

@@ -13,8 +13,8 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C \
 
 # Packages install
 RUN apt-get install -y php php-xdebug php-mysql php-intl php-cli php-dev php-tidy php-curl \
-    php-gd php-fpm php-zip php-mbstring php-xml \
-	nodejs ruby libicu-dev libhiredis-dev git \
+    php-gd php-fpm php-zip php-mbstring php-xml php-gearman php-pear \
+	nodejs ruby libicu-dev libhiredis-dev git gearman-job-server libgearman-dev \
 	supervisor nginx acl ruby-dev fabric vim nodejs npm yarn
 RUN phpenmod pdo_mysql
 
