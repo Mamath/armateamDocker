@@ -31,7 +31,7 @@ services:
       - ./logs/nginx/:/var/log/nginx
       - ./logs/symfony:/home/src/tournament/var/logs
       - ./logs/symfony:/home/src/bookshop-api/var/logs
-      - ~/.ssh:/home/.ssh
+      - ./armateam/config/ssh:/root/.ssh
     tty: true
   elk:
     image: willdurand/elk

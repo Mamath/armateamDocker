@@ -9,23 +9,29 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 46C2130DFD2497F5 \
     && echo "deb http://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C \
     && echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu xenial main" > /etc/apt/sources.list.d/ondrej-ubuntu-php-xenial.list \
-    && apt-get update
+    && apt-get update \
+    && apt-get -yuf upgrade
 
 # Packages install
-RUN apt-get install -y php php-xdebug php-mysql php-intl php-cli php-dev php-tidy php-curl \
-    php-gd php-fpm php-zip php-mbstring php-xml php-gearman php-pear \
-	nodejs ruby libicu-dev libhiredis-dev git gearman-job-server libgearman-dev \
-	supervisor nginx acl ruby-dev fabric vim nodejs npm yarn
+RUN apt-get install -y php php-common php-xdebug php-mysql php-intl php-dev php-curl \
+    php-gd php-fpm php-mbstring \
+	nodejs ruby \
+	supervisor apache2 acl ruby-dev fabric vim nodejs npm yarn
 RUN phpenmod pdo_mysql
 
 RUN mkdir -p /home/src
+RUN mkdir -p /home/var
 RUN ln -fs /usr/bin/nodejs /usr/bin/node
 
 # Config Nginx
-ADD config/nginx/nginx.conf /etc/nginx
-ADD config/nginx/symfony.conf /etc/nginx/sites-available/
-RUN ln -s /etc/nginx/sites-available/symfony.conf /etc/nginx/sites-enabled/symfony
-RUN rm /etc/nginx/sites-enabled/default
+#ADD config/nginx/nginx.conf /etc/nginx
+#ADD config/nginx/symfony.conf /etc/nginx/sites-available/
+#RUN ln -s /etc/nginx/sites-available/symfony.conf /etc/nginx/sites-enabled/symfony
+#RUN rm /etc/nginx/sites-enabled/default
+ADD config/apache2/hsdeckmagic-le-ssl.conf /etc/apache2/sites-available/
+RUN ln -s /etc/apache2/sites-available/hsdeckmagic-le-ssl.conf /etc/apache2/sites-enabled/hsdeckmagic.conf
+RUN rm /etc/apache2/sites-enabled/000-default.conf
+
 
 # Config PHP
 RUN mkdir -p /var/log/php-fpm \
@@ -41,8 +47,8 @@ RUN curl -sS https://getcomposer.org/installer | php \
 COPY config/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 RUN HTTPDUSER=`ps axo user,comm | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
-#RUN setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX /home/api/var
-#RUN setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX /home/api/var
+RUN setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX /home/var
+RUN setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX /home/var
 
 # 1000 c'est l'id user des volumes et cela permet de ne pas avoir de pb droit
 RUN usermod -u 1000 www-data
