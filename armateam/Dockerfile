@@ -14,23 +14,20 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C \
 
 # Packages install
 RUN apt-get install -y php php-common php-xdebug php-mysql php-intl php-dev php-curl \
-    php-gd php-fpm php-mbstring \
+    php-gd php-fpm php-mbstring php-gmp php-gearman \
 	nodejs ruby \
-	supervisor apache2 acl ruby-dev fabric vim nodejs npm yarn
+	supervisor apache2 acl ruby-dev fabric vim nodejs npm yarn gearman-job-server libgearman-dev
 RUN phpenmod pdo_mysql
 
 RUN mkdir -p /home/src
 RUN mkdir -p /home/var
 RUN ln -fs /usr/bin/nodejs /usr/bin/node
 
-# Config Nginx
-#ADD config/nginx/nginx.conf /etc/nginx
-#ADD config/nginx/symfony.conf /etc/nginx/sites-available/
-#RUN ln -s /etc/nginx/sites-available/symfony.conf /etc/nginx/sites-enabled/symfony
-#RUN rm /etc/nginx/sites-enabled/default
 ADD config/apache2/hsdeckmagic-le-ssl.conf /etc/apache2/sites-available/
 RUN ln -s /etc/apache2/sites-available/hsdeckmagic-le-ssl.conf /etc/apache2/sites-enabled/hsdeckmagic.conf
 RUN rm /etc/apache2/sites-enabled/000-default.conf
+RUN mkdir -p /var/log/apache2/symfony
+
 
 
 # Config PHP
